@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background: #f0f4f8;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f4f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a73e8;
+  border-radius: 4px;
+}
+
+/* Leaflet popup personnalisé */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.leaflet-popup-tip {
+  box-shadow: none !important;
+}
+
+/* Attribution leaflet plus discrète */
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  opacity: 0.6;
+}
