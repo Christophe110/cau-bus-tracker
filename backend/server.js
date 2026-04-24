@@ -82,6 +82,15 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
+// Empêche Railway de s'endormir
+const https = require('https');
+setInterval(() => {
+  https.get('https://cau-bus-tracker-production.up.railway.app', (res) => {
+    console.log('Keep-alive ping:', res.statusCode);
+  }).on('error', (err) => {
+    console.log('Ping error:', err.message);
+  });
+}, 240000); // Toutes les 4 minutes
 server.listen(PORT, () => {
   console.log(`Serveur démarré sur le port ${PORT}`);
 });
